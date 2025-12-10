@@ -70,7 +70,7 @@ public class Main
         return head.getNext();
     }
 
-	public static Node<Integer> ex_2(Node<Integer> p1)
+public static Node<Integer> ex_2(Node<Integer> p1)
 {
     Node<Integer> head=new Node<Integer>(-1); 
     Node<Integer> p=head;
@@ -92,16 +92,11 @@ public class Main
         }
         Node<Integer> minNode = minPrev.getNext();
         minPrev.setNext(minNode.getNext());
-        list = fake.getNext();
-
-        // add min to the sorted list
+        p1 = fake.getNext();
         p.setNext(new Node<Integer>(min));
         p=p.getNext();
     }
-
     return head.getNext();
-}
-	
-    
-    
+} 
+
 }
