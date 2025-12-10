@@ -7,7 +7,8 @@ public class Main
         int [] b = {1,2,5,6,6,22};
         Node<Integer> p1 = buildList(a);
         Node<Integer> p2 = buildList(b);
-        ex_1(p1,p2);
+        ex_1(p1,p2)
+		ex_2(p1)
     }
     
     public static Node<Integer> buildList(int[] a) 
