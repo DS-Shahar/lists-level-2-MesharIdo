@@ -68,6 +68,39 @@ public class Main
         System.out.println(head);
         return head.getNext();
     }
+
+	public static Node<Integer> ex_2(Node<Integer> p1)
+{
+    Node<Integer> head=new Node<Integer>(-1); 
+    Node<Integer> p=head;
+
+    while(p1 != null)
+    {
+        Node<Integer> fake = new Node<Integer>(0, list);
+        Node<Integer> t=fake;
+        Node<Integer> minPrev=fake;
+        int min= p1.getValue();
+        while(t.getNext()!=null)
+        {
+            if(t.getNext().getValue()<min)
+            {
+                min=t.getNext().getValue();
+                minPrev=t;
+            }
+            t=t.getNext();
+        }
+        Node<Integer> minNode = minPrev.getNext();
+        minPrev.setNext(minNode.getNext());
+        list = fake.getNext();
+
+        // add min to the sorted list
+        p.setNext(new Node<Integer>(min));
+        p=p.getNext();
+    }
+
+    return head.getNext();
+}
+	
     
     
 }
