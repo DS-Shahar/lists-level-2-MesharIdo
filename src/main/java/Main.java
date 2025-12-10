@@ -77,7 +77,7 @@ public class Main
 
     while(p1 != null)
     {
-        Node<Integer> fake = new Node<Integer>(0, list);
+        Node<Integer> fake = new Node<Integer>(-1,p1);
         Node<Integer> t=fake;
         Node<Integer> minPrev=fake;
         int min= p1.getValue();
