@@ -15,6 +15,7 @@ public class Main
 		System.out.println(n);
 		boolean exx4 = ex_4(p2);
 		System.out.println(exx4);
+		ex_5(p3);
     }
     
 	public static boolean isIn(Node <Integer> p2, int x) 
@@ -165,6 +166,27 @@ public class Main
             p=p.getNext();
         }
         return true;
+    }
+    
+    public static Node<Integer> ex_5(Node <Integer> p3)
+    {
+        Node <Integer> p=p3;
+        Node<Integer> newList = new Node<Integer>(-1);
+        Node<Integer> newerList = newList;
+        newList.setNext(new Node <Integer>(p3.getValue()));
+        p=p.getNext();
+        while (p!=null)
+        {
+            if (!isIn(newerList,p.getValue()))
+            {
+                newList.setNext(new Node<Integer>(p.getValue()));
+                newList=newList.getNext();
+            }
+            p=p.getNext();
+        }
+        System.out.println(p3.toString());
+        System.out.println(newerList.toString());
+        return newerList;
     }
 
 }
